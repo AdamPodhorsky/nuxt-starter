@@ -11,20 +11,26 @@ allowBuilds:
 minimumReleaseAge: 20160 # 14 days * 24 hours * 60 minutes
 
 minimumReleaseAgeExclude:
-  # Added because of vulns on 2026-03-08, can be removed later
   - minimatch@5.1.8 || 9.0.7 || 10.2.3
   - serialize-javascript@7.0.3
   - svgo@4.0.1
   - sax@1.5.0
-  - tar@7.5.10
+  - tar@7.5.11
+  - flatted@3.4.0
+  - devalue@5.6.4
+  - unhead@2.1.11
 
 overrides:
-  # Added because of vulns by `pnpm audit --fix`
   brace-expansion@>=2.0.0 <=2.0.1: '>=2.0.2'
+  devalue@<5.6.4: '>=5.6.4'
+  devalue@<=5.6.3: '>=5.6.4'
+  flatted@<3.4.0: '>=3.4.0'
   glob@>=10.2.0 <10.5.0: '>=10.5.0'
   js-yaml@>=4.0.0 <4.1.1: '>=4.1.1'
   lodash-es@>=4.0.0 <=4.17.22: '>=4.17.23'
   lodash@>=4.0.0 <=4.17.22: '>=4.17.23'
+  minimatch: '10.2.3'
+  nanotar: '0.3.0'
   node-forge@<1.3.2: '>=1.3.2'
   qs@<6.14.1: '>=6.14.1'
   qs@>=6.7.0 <=6.14.1: '>=6.14.2'
@@ -34,7 +40,5 @@ overrides:
   tar@<7.5.8: '>=7.5.8'
   tar@<=7.5.2: '>=7.5.3'
   tar@<=7.5.3: '>=7.5.4'
-  tar@<=7.5.9: '>=7.5.10'
-  # Added because of vulns by me after `pnpm audit --fix` didn't solve those
-  minimatch: '10.2.3'
-  nanotar: '0.3.0'
+  tar@<=7.5.9: '>=7.5.11'
+  unhead@<=2.1.10: '>=2.1.11'
